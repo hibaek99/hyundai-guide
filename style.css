@@ -1,0 +1,456 @@
+/* ===========================
+   Oracle AI Campus · Data Track
+   선발 절차 안내 스타일시트
+   =========================== */
+
+/* ── 리셋 & 기본 ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── 색상 변수 : 기본값 = 브라우저 라이트 모드 → 어두운 톤으로 표시 ── */
+:root {
+  --purple-50:  #2E2B5F;
+  --purple-200: #7B72D4;
+  --purple-600: #8F88E0;
+  --purple-800: #C4BFEF;
+
+  --surface-page: #191919;
+  --surface-card: #232323;
+  --surface-sub:  #2C2C2C;
+
+  --text-primary:   #E8E8E6;
+  --text-secondary: #9A9A96;
+  --text-hint:      #636360;
+
+  --border:       rgba(255, 255, 255, 0.07);
+  --border-hover: rgba(255, 255, 255, 0.14);
+
+  --check-yes-bg: rgba(100, 90, 200, 0.12);
+  --check-no-bg:  #2C2C2C;
+
+  --radius:    12px;
+  --radius-sm:  8px;
+}
+
+/* ── 색상 변수 : 브라우저 다크 모드 → 밝은 톤으로 표시 (반전) ── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --purple-50:  #EEEDFE;
+    --purple-200: #AFA9EC;
+    --purple-600: #534AB7;
+    --purple-800: #3C3489;
+
+    --surface-page: #F5F4F0;
+    --surface-card: #FFFFFF;
+    --surface-sub:  #F7F7F5;
+
+    --text-primary:   #1A1A18;
+    --text-secondary: #5F5E5A;
+    --text-hint:      #888780;
+
+    --border:       rgba(0, 0, 0, 0.08);
+    --border-hover: rgba(0, 0, 0, 0.15);
+
+    --check-yes-bg: rgba(234, 243, 222, 0.5);
+    --check-no-bg:  #FFFFFF;
+
+    mark {
+    background: #6B5A2A;
+    color: #FCEFC7;
+  }
+  }
+}
+
+/* ── 전체 레이아웃 ── */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--surface-page);
+  color: var(--text-primary);
+  min-height: 100vh;
+  padding: 40px 20px 60px;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* ── 헤더 ── */
+.header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--purple-50);
+  color: var(--purple-800);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  border: 1px solid var(--purple-200);
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--purple-600);
+  border-radius: 50%;
+}
+
+.header h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  margin-bottom: 6px;
+}
+
+.header p {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+}
+
+.header p {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+}
+.header p + p {
+  margin-top: 8px;
+}
+
+/* ── 진행률 바 ── */
+.progress-wrap {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.progress-bar-track {
+  flex: 1;
+  height: 4px;
+  background: var(--surface-sub);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--purple-600), var(--purple-200));
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.progress-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--purple-600);
+  white-space: nowrap;
+}
+
+.progress-text {
+  font-size: 12px;
+  color: var(--text-hint);
+  white-space: nowrap;
+}
+
+/* ── 스텝 카드 ── */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.step {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.step:hover { border-color: var(--border-hover); }
+
+.step.active {
+  border-color: var(--purple-200);
+  box-shadow: 0 0 0 3px rgba(83, 74, 183, 0.06);
+}
+
+/* 헤더 */
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+  background: var(--surface-sub);
+  color: var(--text-secondary);
+  transition: background 0.2s, color 0.2s;
+}
+
+.step.active .step-num {
+  background: var(--purple-600);
+  color: white;
+}
+
+.step-info { flex: 1; min-width: 0; }
+
+.step-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--purple-600);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.step-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.2px;
+}
+
+.step-meta {
+  font-size: 12px;
+  color: var(--text-hint);
+  margin-top: 2px;
+}
+
+.step-chevron {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--surface-sub);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  color: var(--text-hint);
+  transition: transform 0.25s, background 0.2s;
+  flex-shrink: 0;
+}
+
+.step.active .step-chevron {
+  transform: rotate(180deg);
+  background: var(--purple-50);
+  color: var(--purple-600);
+  border-color: var(--purple-200);
+}
+
+/* 본문 */
+.step-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step.active .step-body { max-height: 800px; }
+
+.step-content {
+  padding: 14px 18px 18px;
+  border-top: 1px solid var(--border);
+}
+
+/* ── 본문 내부 요소 ── */
+.desc {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  white-space: pre-line;
+}
+
+.notice {
+  background: var(--surface-sub);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 10px 0;
+}
+
+.notice strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* CTA 링크 버튼 */
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--purple-600);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  margin: 10px 0;
+  transition: background 0.15s;
+}
+
+.cta-link:hover { background: var(--purple-800); }
+
+/* 버튼 여러 개 세로 나열 */
+.cta-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.cta-links .cta-link {
+  margin: 0;
+}
+
+mark {
+  background: #FDE9A8;
+  color: #3A3000;
+  padding: 0 3px;
+  border-radius: 2px;
+}
+
+/* 경로 안내 */
+.how-path {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  background: var(--surface-sub);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  margin: 10px 0;
+}
+
+.how-path .arrow { color: var(--text-hint); }
+
+.how-path .kw {
+  background: var(--purple-50);
+  color: var(--purple-800);
+  font-weight: 600;
+  padding: 1px 7px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* 날짜 목록 */
+.date-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.date-row {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* 체크리스트 */
+.check-section {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.check-item {
+  display: flex;
+  gap: 10px;
+  padding: 11px 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  align-items: flex-start;
+}
+
+.check-item + .check-item { border-top: 1px solid var(--border); }
+
+.check-item.yes { background: var(--check-yes-bg); }
+.check-item.no  { background: var(--check-no-bg); }
+
+.check-icon {
+  font-size: 15px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.check-main {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.check-sub {
+  color: var(--text-secondary);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* 결과 발표 배너 */
+.result-banner {
+  background: var(--purple-50);
+  border: 1.5px solid var(--purple-200);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  text-align: center;
+}
+
+.result-banner .emoji { font-size: 24px; margin-bottom: 6px; }
+
+.result-banner .title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--purple-800);
+}
+
+.result-banner .sub {
+  font-size: 12px;
+  color: var(--text-hint);
+  margin-top: 3px;
+}
+
+/* ── 푸터 ── */
+.footer {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 12px;
+  color: var(--text-hint);
+}
