@@ -12,24 +12,24 @@
 
 /* ── 색상 변수 : 기본값 = 브라우저 라이트 모드 → 어두운 톤으로 표시 ── */
 :root {
-  --purple-50:  #2E2B5F;
-  --purple-200: #7B72D4;
-  --purple-600: #8F88E0;
-  --purple-800: #C4BFEF;
+  --purple-50:  #EEEDFE;
+  --purple-200: #AFA9EC;
+  --purple-600: #534AB7;
+  --purple-800: #3C3489;
 
-  --surface-page: #191919;
-  --surface-card: #232323;
-  --surface-sub:  #2C2C2C;
+  --surface-page: #F5F4F0;
+  --surface-card: #FFFFFF;
+  --surface-sub:  #F7F7F5;
 
-  --text-primary:   #E8E8E6;
-  --text-secondary: #9A9A96;
-  --text-hint:      #636360;
+  --text-primary:   #1A1A18;
+  --text-secondary: #5F5E5A;
+  --text-hint:      #888780;
 
-  --border:       rgba(255, 255, 255, 0.07);
-  --border-hover: rgba(255, 255, 255, 0.14);
+  --border:       rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(0, 0, 0, 0.15);
 
-  --check-yes-bg: rgba(100, 90, 200, 0.12);
-  --check-no-bg:  #2C2C2C;
+  --check-yes-bg: rgba(234, 243, 222, 0.5);
+  --check-no-bg:  #FFFFFF;
 
   --radius:    12px;
   --radius-sm:  8px;
@@ -38,24 +38,24 @@
 /* ── 색상 변수 : 브라우저 다크 모드 → 밝은 톤으로 표시 (반전) ── */
 @media (prefers-color-scheme: dark) {
   :root {
-    --purple-50:  #EEEDFE;
-    --purple-200: #AFA9EC;
-    --purple-600: #534AB7;
-    --purple-800: #3C3489;
+    --purple-50:  #2E2B5F;
+    --purple-200: #7B72D4;
+    --purple-600: #8F88E0;
+    --purple-800: #C4BFEF;
 
-    --surface-page: #F5F4F0;
-    --surface-card: #FFFFFF;
-    --surface-sub:  #F7F7F5;
+    --surface-page: #191919;
+    --surface-card: #232323;
+    --surface-sub:  #2C2C2C;
 
-    --text-primary:   #1A1A18;
-    --text-secondary: #5F5E5A;
-    --text-hint:      #888780;
+    --text-primary:   #E8E8E6;
+    --text-secondary: #9A9A96;
+    --text-hint:      #636360;
 
-    --border:       rgba(0, 0, 0, 0.08);
-    --border-hover: rgba(0, 0, 0, 0.15);
+    --border:       rgba(255, 255, 255, 0.07);
+    --border-hover: rgba(255, 255, 255, 0.14);
 
-    --check-yes-bg: rgba(234, 243, 222, 0.5);
-    --check-no-bg:  #FFFFFF;
+    --check-yes-bg: rgba(100, 90, 200, 0.12);
+    --check-no-bg:  #2C2C2C;
 
     mark {
     background: #6B5A2A;
