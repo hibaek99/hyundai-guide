@@ -148,6 +148,37 @@ function renderStep(s, i) {
 function render() {
   document.getElementById('stepsContainer').innerHTML =
     STEPS.map((s, i) => renderStep(s, i)).join('');
+  applyHeights();
+}
+
+function applyHeights() {
+  // 펼쳐진(active) 카드만 실제 콘텐츠 높이로 max-height 설정
+  // → 고정값(800px) 대신 정확한 높이를 줘야 노션 iframe이 불필요한 여백 없이
+  //   콘텐츠 크기에 맞춰지고, 이중 스크롤이 발생하지 않음
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.step').forEach((el, idx) => {
+      const body = el.querySelector('.step-body');
+      const content = el.querySelector('.step-content');
+      if (!body || !content) return;
+      if (idx === openIndex) {
+        body.style.maxHeight = content.scrollHeight + 'px';
+      } else {
+        body.style.maxHeight = '0px';
+      }
+    });
+    // 노션 등 iframe 임베드 환경에서 부모 프레임에 실제 문서 높이를 알려줌
+    notifyHeight();
+  });
+}
+
+function notifyHeight() {
+  // 트랜지션(0.35s)이 끝난 뒤 최종 높이를 한 번 더 부모에게 전달
+  const send = () => {
+    const height = document.documentElement.scrollHeight;
+    window.parent.postMessage({ type: 'resize-iframe', height }, '*');
+  };
+  send();
+  setTimeout(send, 400);
 }
 
 function updateProgress() {
@@ -166,3 +197,5 @@ function toggle(i) {
 /* ── 초기화 ── */
 render();
 updateProgress();
+
+window.addEventListener('resize', applyHeights);

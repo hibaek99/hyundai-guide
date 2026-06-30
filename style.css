@@ -65,13 +65,10 @@
 }
 
 /* ── 전체 레이아웃 ── */
-html { scroll-behavior: smooth; }
-
 body {
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--surface-page);
   color: var(--text-primary);
-  min-height: 100vh;
   padding: 40px 20px 60px;
 }
 
@@ -269,14 +266,12 @@ body {
   border-color: var(--purple-200);
 }
 
-/* 본문 */
+/* 본문 — max-height는 JS에서 실제 콘텐츠 높이로 정확히 설정 (노션 iframe 이중 스크롤 방지) */
 .step-body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.step.active .step-body { max-height: 800px; }
 
 .step-content {
   padding: 14px 18px 18px;
