@@ -823,6 +823,325 @@ main { padding: 40px 0 0; }
 .ib-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
 .ib-desc span { color: var(--text-hint); font-size: 12px; }
 
+/* ── 상세 커리큘럼 ── */
+.track-toggle {
+  display: flex;
+  gap: 8px;
+  background: var(--surface-sub);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 4px;
+  margin-bottom: 24px;
+}
+
+.track-toggle-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 11px 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.track-toggle-btn.active {
+  background: var(--surface-card);
+  color: var(--green-700);
+  box-shadow: var(--shadow-sm);
+}
+
+.curr-summary {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 8px;
+}
+
+.curr-summary-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.curr-icon { font-size: 26px; flex-shrink: 0; }
+
+.curr-name {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.curr-tagline {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.curr-info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.curr-info-row {
+  display: flex;
+  gap: 14px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.curr-info-row span {
+  flex-shrink: 0;
+  width: 68px;
+  color: var(--text-hint);
+  font-weight: 600;
+}
+
+.curr-info-row p { color: var(--text-primary); }
+
+.curr-comp-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.curr-comp-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.curr-comp-label {
+  flex-shrink: 0;
+  width: 56px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.curr-comp-track {
+  flex: 1;
+  height: 8px;
+  background: var(--surface-sub);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.curr-comp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green-600), var(--green-700));
+  border-radius: 4px;
+}
+
+.curr-comp-pct {
+  flex-shrink: 0;
+  font-family: 'SFMono-Regular', 'Roboto Mono', 'Consolas', monospace;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--green-700);
+  min-width: 82px;
+  text-align: right;
+}
+
+/* 모듈 테이블 */
+.module-table {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.module-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.module-row:last-child { border-bottom: none; }
+
+.module-tag {
+  flex-shrink: 0;
+  min-width: 52px;
+  text-align: center;
+  background: var(--green-50);
+  color: var(--green-700);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 100px;
+}
+
+.module-name {
+  flex: 1;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.module-meta {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: var(--text-hint);
+}
+
+.module-pct {
+  flex-shrink: 0;
+  font-family: 'SFMono-Regular', 'Roboto Mono', 'Consolas', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--yellow-700);
+  min-width: 32px;
+  text-align: right;
+}
+
+/* 단계별 아코디언 */
+.stage-acc {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.stage-acc-item {
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.stage-acc-item.open { border-color: var(--purple-200); }
+
+.stage-acc-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  padding: 14px 16px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.stage-acc-num {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: var(--black);
+  color: var(--yellow-500);
+  font-family: 'SFMono-Regular', 'Roboto Mono', 'Consolas', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stage-acc-title {
+  flex: 1;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.stage-acc-meta {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: var(--text-hint);
+}
+
+.stage-acc-chevron {
+  flex-shrink: 0;
+  font-size: 11px;
+  color: var(--text-hint);
+  transition: transform 0.25s;
+}
+
+.stage-acc-item.open .stage-acc-chevron { transform: rotate(180deg); color: var(--green-700); }
+
+.stage-acc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.stage-acc-body-inner {
+  padding: 4px 16px 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sub-item { padding-top: 12px; }
+
+.sub-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.sub-item-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.sub-item-meta {
+  flex-shrink: 0;
+  font-family: 'SFMono-Regular', 'Roboto Mono', 'Consolas', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--green-700);
+}
+
+.sub-item-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sub-item-list li {
+  position: relative;
+  padding-left: 13px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.sub-item-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--border-hover);
+}
+
+@media (max-width: 520px) {
+  .track-toggle-btn { font-size: 12px; padding: 10px 4px; }
+  .curr-info-row span { width: 58px; }
+}
+
 /* ── FAQ ── */
 .faq-list {
   display: flex;

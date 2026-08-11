@@ -43,6 +43,7 @@
     <div class="inner tab-row">
       <button class="tab active" data-tab="process">선발 절차</button>
       <button class="tab" data-tab="schedule">훈련 일정</button>
+      <button class="tab" data-tab="curriculum">상세 커리큘럼</button>
       <button class="tab" data-tab="faq">자주 묻는 질문</button>
     </div>
   </nav>
@@ -63,7 +64,7 @@
         <div class="progress-bar-track">
           <div class="progress-bar-fill" id="progressFill"></div>
         </div>
-        <span class="progress-label" id="progressLabel">1 / 7</span>
+        <span class="progress-label" id="progressLabel">1 / 8</span>
       </div>
 
       <div class="dots" id="dots"></div>
@@ -169,7 +170,31 @@
       </div>
     </section>
 
-    <!-- ③ FAQ -->
+    <!-- ③ 상세 커리큘럼 -->
+    <section id="tab-curriculum" class="tab-section">
+      <div class="section-header">
+        <div class="eyebrow">CURRICULUM · 600H</div>
+        <h2>상세 커리큘럼</h2>
+        <p>트랙별 9단계, 총 600시간(75일) 커리큘럼을 확인해 보세요</p>
+      </div>
+
+      <div class="track-toggle" id="curriculumTrackToggle">
+        <button class="track-toggle-btn active" data-track="md">🛍️ MD(상품기획) &amp; 바잉</button>
+        <button class="track-toggle-btn" data-track="live">📹 라이브커머스 전문가</button>
+      </div>
+
+      <div id="curriculumBody"></div>
+
+      <!-- <div class="info-box">
+        <div class="ib-icon">📌</div>
+        <div>
+          <div class="ib-title">운영 지원사항</div>
+          <div class="ib-desc">자격증 스터디반 운영: 유통관리사, 전자상거래관리사 등<br>※ 상기 커리큘럼은 운영 사정에 따라 일부 변동될 수 있습니다.</div>
+        </div>
+      </div> -->
+    </section>
+
+    <!-- ④ FAQ -->
     <section id="tab-faq" class="tab-section">
       <div class="section-header">
         <div class="eyebrow">FAQ · Q&amp;A</div>
@@ -214,4 +239,3 @@
 
 <script src="script.js"></script>
 </body>
-</html>
