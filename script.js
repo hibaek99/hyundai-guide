@@ -24,30 +24,30 @@ const STEPS = [
       { yes: false, main: '유선 상담 미동의', sub: '→ 카카오톡 채널 @ai부트캠프로 상담이 진행돼요' }
     ]
   },
+  // {
+  //   label: 'STEP 3', title: '서류 전형', meta: '트랙별 서류 작성 및 제출',
+  //   desc: '면접 일정 확정 후 서류를 제출해주세요!\n지원하시는 트랙(MD&바잉 / 라이브커머스)에 맞춰 빠짐없이 꼼꼼하게 작성해 주세요.',
+  //   notice: '<strong>서류 제출 안내</strong><br>✅ 작성 완료 → 면접 일정에 맞춰 <strong>면접 진행</strong><br>❎ 미작성 → 담당 매니저가 <strong>연락</strong><br>원활한 면접 진행을 위해 <strong>면접 전까지 서류 제출을 완료해</strong> 주세요!',
+  //   checks: [
+  //     { yes: true,  main: '서류 작성 완료', sub: '→ 제출하신 지원서를 바탕으로 면접이 진행돼요' },
+  //     { yes: false, main: '서류 미작성',   sub: '→ 담당 매니저가 연락드려요' }
+  //   ]
+  // },
   {
-    label: 'STEP 3', title: '서류 전형', meta: '트랙별 서류 작성 및 제출',
-    desc: '면접 일정 확정 후 서류를 제출해주세요!\n지원하시는 트랙(MD&바잉 / 라이브커머스)에 맞춰 빠짐없이 꼼꼼하게 작성해 주세요.',
-    notice: '<strong>서류 제출 안내</strong><br>✅ 작성 완료 → 면접 일정에 맞춰 <strong>면접 진행</strong><br>❎ 미작성 → 담당 매니저가 <strong>연락</strong><br>원활한 면접 진행을 위해 <strong>면접 전까지 서류 제출을 완료해</strong> 주세요!',
-    checks: [
-      { yes: true,  main: '서류 작성 완료', sub: '→ 제출하신 지원서를 바탕으로 면접이 진행돼요' },
-      { yes: false, main: '서류 미작성',   sub: '→ 담당 매니저가 연락드려요' }
-    ]
+    label: 'STEP 3', title: '면접 전형', meta: '직무 적합성 및 참여 의지 확인',
+    desc: '직무 적합성과 교육 참여 의지를 확인하는 단계입니다. \n 면접은 비대면으로 진행되며, 링크는 문자로 안내드립니다!'
   },
   {
-    label: 'STEP 4', title: '면접 전형', meta: '직무 적합성 및 참여 의지 확인',
-    desc: '직무 적합성과 교육 참여 의지를 확인하는 단계입니다. \n 면접은 비대면으로 진행됩니다.'
-  },
-  {
-    label: 'STEP 5', title: '역량 테스트&CDSE 진단', meta: '트랙별 역량 테스트 및 CDSE 진단',
-    desc: '면접 진행자에 한해 역량 테스트와 CDSE 진단을 진행합니다.',
+    label: 'STEP 4', title: '역량 테스트&CDSE 진단', meta: '트랙별 역량 테스트 및 CDSE 진단',
+    desc: '최종 합격자에 한해 역량 테스트와 CDSE 진단을 진행합니다.',
     notice: '<strong>⚠️ 유의사항</strong><br>기한 내 미응시할 경우 자동으로 선발 취소되니 기한 내 꼭 응시해주세요!',
   },
   {
-    label: 'STEP 6', title: '최종 합격', meta: '합격자 개별 안내',
+    label: 'STEP 5', title: '최종 합격', meta: '합격자 개별 안내',
     isResult: true
   },
   {
-    label: 'STEP 7', title: '최종 합류', meta: '최종 입과자 개강 안내',
+    label: 'STEP 6', title: '최종 합류', meta: '최종 입과자 개강 안내',
     desc: '<strong style="color:var(--purple-600)">합류를 위한 모든 절차가 끝났어요!</strong> 🎉\n개강일 및 OT 일정은 담당 매니저가 개별 안내드립니다:)'
   }
 ];

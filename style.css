@@ -291,6 +291,88 @@ mark {
   margin-bottom: 26px;
 }
 
+/* ── 히어로 내 2기 모집 강조 카드 ── */
+.hero-highlight {
+  text-align: left;
+  max-width: 420px;
+  margin: 0 auto 22px;
+  background: linear-gradient(150deg, var(--green-50) 0%, var(--surface-card) 60%);
+  border: 1px solid var(--purple-200);
+  border-radius: var(--radius);
+  padding: 16px 18px 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.hh-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--yellow-500);
+  color: var(--black);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+
+.hh-cohort {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+  color: var(--text-primary);
+}
+
+.hh-meta {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.hh-item {
+  flex: 1;
+  min-width: 0;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 4px;
+  text-align: center;
+}
+
+.hh-item span {
+  display: block;
+  font-size: 10px;
+  color: var(--text-hint);
+  margin-bottom: 3px;
+  white-space: nowrap;
+}
+
+.hh-item strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.hh-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: var(--green-700);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 12px 0;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.hh-cta:hover { background: var(--green-900); transform: translateY(-1px); }
+
 .hero-chips {
   display: flex;
   flex-wrap: wrap;
@@ -698,6 +780,15 @@ main { padding: 40px 0 0; }
 
 .cd-row span { color: var(--text-secondary); }
 .cd-row strong { font-weight: 700; }
+
+.cd-row.highlight {
+  margin-top: 4px;
+  padding-top: 9px;
+  border-top: 1px dashed var(--border);
+}
+
+.cd-row.highlight span { color: var(--yellow-700); font-weight: 600; }
+.cd-row.highlight strong { color: var(--yellow-700); }
 
 /* ── 트랙 카드 ── */
 .track-grid {
